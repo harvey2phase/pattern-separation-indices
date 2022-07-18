@@ -1,0 +1,611 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     23646,        601]
+NotebookOptionsPosition[     20413,        543]
+NotebookOutlinePosition[     20850,        560]
+CellTagsIndexPosition[     20807,        557]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+
+Do PDFs Integrate to 1?\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.864983243459964*^9, 
+  3.864983270918195*^9}},ExpressionUUID->"c732b57a-eff3-4e40-a060-\
+16d66b30257f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{"LogisticNormalPDF", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x1", ",", "x2"}], "}"}], ",", "\[Mu]", ",", 
+     "\[CapitalSigma]"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x1", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x2", ",", "0", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.864983272033885*^9, 3.864983275466282*^9}, {
+  3.864984286329762*^9, 
+  3.864984287170405*^9}},ExpressionUUID->"a8d53f40-9e0a-46df-acda-\
+a991ff9c03b7"],
+
+Cell[BoxData["1"], "Output",
+ CellLabel->"Out[7]= ",ExpressionUUID->"dc582d8a-b681-4fc3-b509-9bd70e880cbb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"\[Mu]", "=", 
+  RowBox[{"{", 
+   RowBox[{"\[Mu]1", ",", "\[Mu]2"}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"\[CapitalSigma]", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"\[Sigma]1", "^", "2"}], ",", 
+      RowBox[{"\[Sigma]1", "*", "\[Sigma]2", " ", "*", " ", "\[Rho]"}]}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"\[Sigma]1", "*", "\[Sigma]2", " ", "*", " ", "\[Rho]"}], ",", 
+      RowBox[{"\[Sigma]2", "^", "2"}]}], "}"}]}], "}"}]}], "\n", 
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"LogisticNormalPDF", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"x1", ",", "x2"}], "}"}], ",", "\[Mu]", ",", 
+      "\[CapitalSigma]"}], "]"}], "*", "x1", "*", "x2"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x1", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x2", ",", "0", ",", "1"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.865641081662537*^9, 3.8656411056578693`*^9}, {
+   3.865641525491405*^9, 3.865641573784103*^9}, 3.866731776678446*^9, {
+   3.866735042308601*^9, 
+   3.8667350960805073`*^9}},ExpressionUUID->"8abc4a2a-33d5-4ab4-bd69-\
+8b015cf23990"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\[Mu]1", ",", "\[Mu]2"}], "}"}]], "Output",
+ CellLabel->"Out[8]= ",ExpressionUUID->"3e672e84-04a3-49f3-bf8c-df62dc32b9b3"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["\[Sigma]1", "2"], ",", 
+     RowBox[{"\[Rho]", " ", "\[Sigma]1", " ", "\[Sigma]2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[Rho]", " ", "\[Sigma]1", " ", "\[Sigma]2"}], ",", 
+     SuperscriptBox["\[Sigma]2", "2"]}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[9]= ",ExpressionUUID->"ddfd476d-093a-41c3-95be-fcd9101e59e2"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Cloud", "timelimit", 
+   "\"This computation has exceeded the time limit for your plan.\"", 2, 10, 
+   1, 17311077280006835739, "Local", "CloudSystem`Cloud"},
+  "MessageTemplate2"]], "Message", \
+"MSG",ExpressionUUID->"44b4e6e8-653a-475a-a56d-0a9722e32ad3"],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellLabel->
+  "Out[10]= ",ExpressionUUID->"3cc8a3bd-c5ce-45de-adbe-16c9a4ca2009"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NIntegrate", "[", 
+  RowBox[{
+   RowBox[{"PDF", "[", 
+    RowBox[{"LogisticNormalTransformedDistribution", ",", 
+     RowBox[{"{", 
+      RowBox[{"x1", ",", "x2"}], "}"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x1", ",", "0.5", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x2", ",", "0", ",", ".5"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.86564121257213*^9, {3.86564136549958*^9, 3.86564136752785*^9}, {
+   3.865641407906294*^9, 3.865641408295869*^9}, {3.865641477887621*^9, 
+   3.865641512403904*^9}, {3.866731875699565*^9, 3.866731878488983*^9}, {
+   3.8667319181422157`*^9, 
+   3.866731930271846*^9}},ExpressionUUID->"49fc515c-6f24-4916-b2de-\
+a7295e8c6c71"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate", "inumr", 
+   "\"The integrand \\!\\(\\*TagBox[RowBox[{\\\"PDF\\\", \\\"[\\\", \
+RowBox[{\\\"LogisticNormalTransformedDistribution\\\", \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"x1\\\", \\\",\\\", \\\"x2\\\"}], \
+\\\"}\\\"}]}], \\\"]\\\"}], Short[#1, 5] & ]\\) has evaluated to \
+non-numerical values for all sampling points in the region with boundaries \
+\\!\\(\\*TagBox[RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{\\\"0.5`\\\", \\\",\\\", \\\"1\\\"}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\",\\\", \\\"0.5`\\\"}], \
+\\\"}\\\"}]}], \\\"}\\\"}], Short[#1, 5] & ]\\).\"", 2, 11, 2, 
+   17311077280006835739, "Local"},
+  "MessageTemplate"]], "Message", \
+"MSG",ExpressionUUID->"e23938cc-fea0-4dd3-b9d9-71336910e1b3"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate", "inumr", 
+   "\"The integrand \\!\\(\\*TagBox[RowBox[{\\\"PDF\\\", \\\"[\\\", \
+RowBox[{\\\"LogisticNormalTransformedDistribution\\\", \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"x1\\\", \\\",\\\", \\\"x2\\\"}], \
+\\\"}\\\"}]}], \\\"]\\\"}], Short[#1, 5] & ]\\) has evaluated to \
+non-numerical values for all sampling points in the region with boundaries \
+\\!\\(\\*TagBox[RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{\\\"0.5`\\\", \\\",\\\", \\\"1\\\"}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\",\\\", \\\"0.5`\\\"}], \
+\\\"}\\\"}]}], \\\"}\\\"}], Short[#1, 5] & ]\\).\"", 2, 11, 3, 
+   17311077280006835739, "Local"},
+  "MessageTemplate"]], "Message", \
+"MSG",ExpressionUUID->"0546e3ff-9567-4258-9de0-af52b5a989f8"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate", "inumr", 
+   "\"The integrand \\!\\(\\*TagBox[RowBox[{\\\"PDF\\\", \\\"[\\\", \
+RowBox[{\\\"LogisticNormalTransformedDistribution\\\", \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"x1\\\", \\\",\\\", \\\"x2\\\"}], \
+\\\"}\\\"}]}], \\\"]\\\"}], Short[#1, 5] & ]\\) has evaluated to \
+non-numerical values for all sampling points in the region with boundaries \
+\\!\\(\\*TagBox[RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{\\\"0.5`\\\", \\\",\\\", \\\"1\\\"}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\",\\\", \\\"0.5`\\\"}], \
+\\\"}\\\"}]}], \\\"}\\\"}], Short[#1, 5] & ]\\).\"", 2, 11, 4, 
+   17311077280006835739, "Local"},
+  "MessageTemplate"]], "Message", \
+"MSG",ExpressionUUID->"7b91e3d7-2970-4a4e-aed0-ce8e059010ee"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General", "stop", 
+   "\"Further output of \\!\\(\\*TagBox[StyleBox[RowBox[{\\\"NIntegrate\\\", \
+\\\"::\\\", \\\"inumr\\\"}], \\\"MessageName\\\"], Short[#1, 5] & ]\\) will \
+be suppressed during this calculation.\"", 2, 11, 5, 17311077280006835739, 
+   "Local"},
+  "MessageTemplate"]], "Message", \
+"MSG",ExpressionUUID->"3bea3c06-3268-4fd1-8db7-9bcf85094534"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate", "inumr", 
+   "\"The integrand \\!\\(\\*TagBox[RowBox[{\\\"PDF\\\", \\\"[\\\", \
+RowBox[{\\\"LogisticNormalTransformedDistribution\\\", \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"x1\\\", \\\",\\\", \\\"x2\\\"}], \
+\\\"}\\\"}]}], \\\"]\\\"}], Short[#1, 5] & ]\\) has evaluated to \
+non-numerical values for all sampling points in the region with boundaries \
+\\!\\(\\*TagBox[RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{\\\"0.5`\\\", \\\",\\\", \\\"1\\\"}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\",\\\", \\\"0.5`\\\"}], \
+\\\"}\\\"}]}], \\\"}\\\"}], Short[#1, 5] & ]\\).\"", 2, 11, 6, 
+   17311077280006835739, "Local"},
+  "MessageTemplate"]], "Message", \
+"MSG",ExpressionUUID->"c842ef97-ea59-4a2d-88db-75ca29086802"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate", "inumr", 
+   "\"The integrand \\!\\(\\*TagBox[RowBox[{\\\"PDF\\\", \\\"[\\\", \
+RowBox[{\\\"LogisticNormalTransformedDistribution\\\", \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"x1\\\", \\\",\\\", \\\"x2\\\"}], \
+\\\"}\\\"}]}], \\\"]\\\"}], Short[#1, 5] & ]\\) has evaluated to \
+non-numerical values for all sampling points in the region with boundaries \
+\\!\\(\\*TagBox[RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{\\\"0.5`\\\", \\\",\\\", \\\"1\\\"}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\",\\\", \\\"0.5`\\\"}], \
+\\\"}\\\"}]}], \\\"}\\\"}], Short[#1, 5] & ]\\).\"", 2, 11, 7, 
+   17311077280006835739, "Local"},
+  "MessageTemplate"]], "Message", \
+"MSG",ExpressionUUID->"9665e21e-e119-42c7-87f2-bfd1f173362e"],
+
+Cell[BoxData[
+ RowBox[{"NIntegrate", "[", 
+  RowBox[{
+   RowBox[{"PDF", "[", 
+    RowBox[{"LogisticNormalTransformedDistribution", ",", 
+     RowBox[{"{", 
+      RowBox[{"x1", ",", "x2"}], "}"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x1", ",", "0.5`", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x2", ",", "0", ",", "0.5`"}], "}"}]}], "]"}]], "Output",
+ CellLabel->
+  "Out[11]= ",ExpressionUUID->"4c15fa4a-0047-4aaa-874e-6010df1fdc57"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3D Plots", "Subsection",
+ CellChangeTimes->{{3.8649834527321253`*^9, 3.864983460132255*^9}, {
+  3.864983605246792*^9, 
+  3.864983605536721*^9}},ExpressionUUID->"c3e4d570-cacb-460d-bc61-\
+c377656ebb1b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Plot3D", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"LogisticNormalPDF", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"x1", ",", "x2"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"sigma1", "^", "2"}], ",", "cov"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"cov", ",", 
+           RowBox[{"sigma2", "^", "2"}]}], "}"}]}], "}"}]}], "]"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"x1", ",", "0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x2", ",", "0", ",", "1"}], "}"}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"x1", ",", "x2"}], "}"}]}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "Full"}]}], "\[IndentingNewLine]", "]"}],
+    ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"cov", ",", "0", ",", "1"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"sigma1", ",", "0.1", ",", "2"}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"sigma2", ",", "0.1", ",", "2"}], "}"}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.86564197657178*^9, 3.865641996810519*^9}, {
+  3.866035068677476*^9, 3.866035090717141*^9}, {3.8667253503844957`*^9, 
+  3.866725367329857*^9}},ExpressionUUID->"60d21b2a-42a8-40db-9f59-\
+cb56e0e73ec1"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{cov$$ = 0.17, sigma1$$ = 1, sigma2$$ = 0.908, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[cov$$], 0, 1}, {
+      Hold[sigma1$$], 0.1, 2}, {
+      Hold[sigma2$$], 0.1, 2}}, Typeset`size$$ = {360., {168., 173.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {cov$$ = 0, sigma1$$ = 0.1, sigma2$$ = 0.1}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot3D[
+        LogisticNormalPDF[{x1, x2}, {0, 
+         0}, {{sigma1$$^2, cov$$}, {cov$$, sigma2$$^2}}], {x1, 0, 1}, {
+        x2, 0, 1}, AxesLabel -> {x1, x2}, PlotRange -> Full], 
+      "Specifications" :> {{cov$$, 0, 1}, {sigma1$$, 0.1, 2}, {
+        sigma2$$, 0.1, 2}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{404., {241., 247.}},
+     SingleEvaluation->True],
+    ExpressionUUID -> "ddc925d7-f788-4596-917b-3c83fb1a9810",
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellLabel->
+  "Out[17]= ",ExpressionUUID->"afb6cc6f-0dd3-4e8c-a726-f64cee38b8e2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Plot3D", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"PDF", "[", 
+      RowBox[{
+       RowBox[{"MultinormalDistribution", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"sigma1", "^", "2"}], ",", 
+             RowBox[{"cov", "*", "sigma1", "*", "sigma2"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"cov", "*", "sigma1", "*", "sigma2"}], ",", 
+             RowBox[{"sigma2", "^", "2"}]}], "}"}]}], "}"}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x1", ",", "x2"}], "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"x1", ",", 
+       RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x2", ",", 
+       RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"x1", ",", "x2"}], "}"}]}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "Full"}]}], "\[IndentingNewLine]", "]"}],
+    ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"cov", ",", "0", ",", "1"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"sigma1", ",", "0.1", ",", "2"}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"sigma2", ",", "0.1", ",", "2"}], "}"}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.866035130500655*^9, 3.8660351525321712`*^9}, 
+   3.866035493477016*^9, {3.8660357398485928`*^9, 
+   3.86603577999823*^9}},ExpressionUUID->"b5f55866-37ec-4afe-bce0-\
+4afef3f4cb36"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{cov$$ = 0, sigma1$$ = 0.1, sigma2$$ = 0.1, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[cov$$], 0, 1}, {
+      Hold[sigma1$$], 0.1, 2}, {
+      Hold[sigma2$$], 0.1, 2}}, Typeset`size$$ = {360., {158., 163.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {cov$$ = 0, sigma1$$ = 0.1, sigma2$$ = 0.1}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot3D[
+        PDF[
+         MultinormalDistribution[{0, 
+          0}, {{sigma1$$^2, cov$$ sigma1$$ sigma2$$}, {
+           cov$$ sigma1$$ sigma2$$, sigma2$$^2}}], {x1, x2}], {x1, -3, 3}, {
+        x2, -3, 3}, AxesLabel -> {x1, x2}, PlotRange -> Full], 
+      "Specifications" :> {{cov$$, 0, 1}, {sigma1$$, 0.1, 2}, {
+        sigma2$$, 0.1, 2}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{404., {231., 237.}},
+     SingleEvaluation->True],
+    ExpressionUUID -> "cd23ceef-5916-4131-9c33-bc37797cfad8",
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellLabel->
+  "Out[13]= ",ExpressionUUID->"859d3ed2-3336-4b23-94d8-aa5def4c676f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["TransformedDistribution", "Subsubsection",
+ CellChangeTimes->{{3.864983636558213*^9, 3.8649836380754337`*^9}, {
+  3.864983745535111*^9, 3.864983746029854*^9}, {3.8649838001692057`*^9, 
+  3.8649838082377243`*^9}},ExpressionUUID->"e6263813-6c2e-4faa-be58-\
+59d0b9e1b426"],
+
+Cell["\<\
+Plot3D[\[IndentingNewLine]PDF[LogisticNormalTransformedDistribution,{z1,z2}],\
+\[IndentingNewLine]{z1,0,1},{z2,0,1},AxesLabel\[Rule]{z1,z2},PlotRange\[Rule]\
+Full]\
+\>", "Text",
+ CellChangeTimes->{{3.864983759745378*^9, 
+  3.864983761936842*^9}},ExpressionUUID->"3be9ffc8-c8c2-41a3-9bbb-\
+0c5c1cf2dcc5"],
+
+Cell[BoxData[
+ Graphics3DBox[{{}, {}},
+  ExpressionUUID -> "86a6a788-3702-45a9-ae32-e23eb071b4ae",
+  Axes->True,
+  AxesLabel->{
+    FormBox[
+     TagBox[
+      TagBox["z1", HoldForm], HoldForm], TraditionalForm], 
+    FormBox[
+     TagBox[
+      TagBox["z2", HoldForm], HoldForm], TraditionalForm], None},
+  AxesOrigin->{Automatic, Automatic, Automatic},
+  BoxRatios->{1, 1, 0.4},
+  DisplayFunction->Identity,
+  FaceGrids->None,
+  FaceGridsStyle->Automatic,
+  Method->{"DefaultBoundaryStyle" -> Directive[
+      GrayLevel[0.3]], 
+    "DefaultGraphicsInteraction" -> {
+     "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+      "Effects" -> {
+       "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+        "Droplines" -> {
+         "freeformCursorMode" -> True, 
+          "placement" -> {"x" -> "All", "y" -> "None"}}}}, "RotationControl" -> 
+    "Globe"},
+  PlotRange->{{0, 1}, {0, 1}, {0., 0.}},
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02], 
+    Scaled[0.02]},
+  Ticks->{Automatic, Automatic, Automatic}]], "Output",
+ CellLabel->
+  "Out[14]= ",ExpressionUUID->"a4b0d644-ef05-4ddf-afc9-a9752c7520cc"],
+
+Cell["\<\
+Plot3D[\[IndentingNewLine]PDF[MultinormalTransformed,{z1,z2}],\
+\[IndentingNewLine]{z1,-3,3},{z2,-3,3},AxesLabel\[Rule]{z1,z2},PlotRange\
+\[Rule]Full]\
+\>", "Text",ExpressionUUID->"eabb9232-7a5b-40d4-bfdb-47da234807d1"],
+
+Cell[BoxData[
+ Graphics3DBox[{{}, {}},
+  ExpressionUUID -> "2e1c9f49-7ed7-46ed-a5dc-0ab10f9c0307",
+  Axes->True,
+  AxesLabel->{
+    FormBox[
+     TagBox[
+      TagBox["z1", HoldForm], HoldForm], TraditionalForm], 
+    FormBox[
+     TagBox[
+      TagBox["z2", HoldForm], HoldForm], TraditionalForm], None},
+  AxesOrigin->{Automatic, Automatic, Automatic},
+  BoxRatios->{1, 1, 0.4},
+  DisplayFunction->Identity,
+  FaceGrids->None,
+  FaceGridsStyle->Automatic,
+  Method->{"DefaultBoundaryStyle" -> Directive[
+      GrayLevel[0.3]], 
+    "DefaultGraphicsInteraction" -> {
+     "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+      "Effects" -> {
+       "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+        "Droplines" -> {
+         "freeformCursorMode" -> True, 
+          "placement" -> {"x" -> "All", "y" -> "None"}}}}, "RotationControl" -> 
+    "Globe"},
+  PlotRange->{{-3, 3}, {-3, 3}, {0., 0.}},
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02], 
+    Scaled[0.02]},
+  Ticks->{Automatic, Automatic, Automatic}]], "Output",
+ CellLabel->
+  "Out[15]= ",ExpressionUUID->"694119c9-bf13-425a-b3cc-d33abff48688"],
+
+Cell["\<\
+g11=Expectation[\[IndentingNewLine](D[Log[LogisticNormalPDF[{x1,x2}]],eta1])^\
+2,\[IndentingNewLine]{x1,x2}\[Distributed]LogisticNormalDistribution\
+\[IndentingNewLine]]\
+\>", "Text",
+ CellChangeTimes->{{3.8653375722253923`*^9, 3.865337710580052*^9}, {
+  3.865337744246777*^9, 3.8653377599238863`*^9}},
+ CellLabel->
+  "In[16]:= ",ExpressionUUID->"10a9b367-6329-4920-b4cc-9d1dc02034af"],
+
+Cell[BoxData["0"], "Output",
+ CellLabel->
+  "Out[16]= ",ExpressionUUID->"db859ade-585c-43cd-aa61-a80aa8442428"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{900, 1097},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+FrontEndVersion->"13.0 for Mac OS X ARM (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"abb607dc-493f-4073-815d-ab6ad47db324"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 183, 6, 71, "Subsubsection",ExpressionUUID->"c732b57a-eff3-4e40-a060-16d66b30257f"],
+Cell[CellGroupData[{
+Cell[788, 32, 549, 15, 30, "Input",ExpressionUUID->"a8d53f40-9e0a-46df-acda-a991ff9c03b7"],
+Cell[1340, 49, 107, 1, 34, "Output",ExpressionUUID->"dc582d8a-b681-4fc3-b509-9bd70e880cbb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1484, 55, 1189, 32, 73, "Input",ExpressionUUID->"8abc4a2a-33d5-4ab4-bd69-8b015cf23990"],
+Cell[2676, 89, 162, 3, 34, "Output",ExpressionUUID->"3e672e84-04a3-49f3-bf8c-df62dc32b9b3"],
+Cell[2841, 94, 434, 11, 37, "Output",ExpressionUUID->"ddfd476d-093a-41c3-95be-fcd9101e59e2"],
+Cell[3278, 107, 289, 6, 28, "Message",ExpressionUUID->"44b4e6e8-653a-475a-a56d-0a9722e32ad3"],
+Cell[3570, 115, 118, 2, 34, "Output",ExpressionUUID->"3cc8a3bd-c5ce-45de-adbe-16c9a4ca2009"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3725, 122, 713, 17, 30, "Input",ExpressionUUID->"49fc515c-6f24-4916-b2de-a7295e8c6c71"],
+Cell[4441, 141, 802, 14, 46, "Message",ExpressionUUID->"e23938cc-fea0-4dd3-b9d9-71336910e1b3"],
+Cell[5246, 157, 802, 14, 46, "Message",ExpressionUUID->"0546e3ff-9567-4258-9de0-af52b5a989f8"],
+Cell[6051, 173, 802, 14, 46, "Message",ExpressionUUID->"7b91e3d7-2970-4a4e-aed0-ce8e059010ee"],
+Cell[6856, 189, 394, 8, 28, "Message",ExpressionUUID->"3bea3c06-3268-4fd1-8db7-9bcf85094534"],
+Cell[7253, 199, 802, 14, 46, "Message",ExpressionUUID->"c842ef97-ea59-4a2d-88db-75ca29086802"],
+Cell[8058, 215, 802, 14, 46, "Message",ExpressionUUID->"9665e21e-e119-42c7-87f2-bfd1f173362e"],
+Cell[8863, 231, 453, 12, 34, "Output",ExpressionUUID->"4c15fa4a-0047-4aaa-874e-6010df1fdc57"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9365, 249, 207, 4, 54, "Subsection",ExpressionUUID->"c3e4d570-cacb-460d-bc61-c377656ebb1b"],
+Cell[CellGroupData[{
+Cell[9597, 257, 1536, 40, 199, "Input",ExpressionUUID->"60d21b2a-42a8-40db-9f59-cb56e0e73ec1"],
+Cell[11136, 299, 1863, 39, 507, "Output",ExpressionUUID->"afb6cc6f-0dd3-4e8c-a726-f64cee38b8e2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13036, 343, 1744, 45, 70, "Input",ExpressionUUID->"b5f55866-37ec-4afe-bce0-4afef3f4cb36"],
+Cell[14783, 390, 1932, 41, 70, "Output",ExpressionUUID->"859d3ed2-3336-4b23-94d8-aa5def4c676f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16752, 436, 275, 4, 70, "Subsubsection",ExpressionUUID->"e6263813-6c2e-4faa-be58-59d0b9e1b426"],
+Cell[17030, 442, 313, 7, 70, "Text",ExpressionUUID->"3be9ffc8-c8c2-41a3-9bbb-0c5c1cf2dcc5"],
+Cell[17346, 451, 1145, 33, 70, "Output",ExpressionUUID->"a4b0d644-ef05-4ddf-afc9-a9752c7520cc"],
+Cell[18494, 486, 229, 4, 70, "Text",ExpressionUUID->"eabb9232-7a5b-40d4-bfdb-47da234807d1"],
+Cell[18726, 492, 1147, 33, 70, "Output",ExpressionUUID->"694119c9-bf13-425a-b3cc-d33abff48688"],
+Cell[19876, 527, 395, 8, 70, "Text",ExpressionUUID->"10a9b367-6329-4920-b4cc-9d1dc02034af"],
+Cell[20274, 537, 111, 2, 70, "Output",ExpressionUUID->"db859ade-585c-43cd-aa61-a80aa8442428"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
